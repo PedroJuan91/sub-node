@@ -108,12 +108,13 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 pub const MILLISECS_PER_BLOCK: u64 = 6000;
 
 pub const SLOT_DURATION: u64 = MILLISECS_PER_BLOCK;
-pub const fn deposit(item1: u32, item2: u32) -> Balance;
 pub const NANO: Balance = 1;
 pub const MICRO: Balance = 1_000 * NANO;
 pub const MILL: Balance = 1_000 * MICRO;
 pub const COIN: Balance = 1_000 * MILL;   
-
+pub const fn deposit(items: u32, bytes: u32) -> Balance {
+	items as Balance * 15 * MILL + (bytes as Balance) * 6 * MILL
+}
 // Time is measured by number of blocks.
 pub const MINUTES: BlockNumber = 60_000 / (MILLISECS_PER_BLOCK as BlockNumber);
 pub const HOURS: BlockNumber = MINUTES * 60;
