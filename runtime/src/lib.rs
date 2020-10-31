@@ -281,7 +281,7 @@ parameter_types! {
 	pub const CouncilMaxMembers: u32 = 100;
 }
 
-type CouncilCollective = pallet_collective::Instace1;
+type CouncilCollective = pallet_collective::Instace0;
 impl pallet_collective::Trait<CouncilCollective> for Runtime {
 	type Origin = Origin;
 	type Proposal = Call;
